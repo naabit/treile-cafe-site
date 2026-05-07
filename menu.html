@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Treile Café | Menú</title>
 
     <!-- Bootstrap 5 -->
@@ -23,16 +24,51 @@
   </head>
 
   <body class="page-menu">
-    <div data-include="navbar"></div>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-treile sticky-top shadow-sm">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Alternar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="menu.html">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="navbar-brand fw-bold" href="index.html">
+          <img
+            src="./assets/img/brand/patita-treile-amarilla.png"
+            alt="Treile Café"
+            class="treile-logo"
+          />
+        </a>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="container mb-5">
-
-
-      <!-- SECCIONES -->
-      <section class="mt-4">
+      <!-- BLOQUE SUPERIOR DEL MENÚ -->
+      <section class="mt-4" aria-label="Menú de bebidas">
         <div class="row g-4">
-          <!-- Izquierda -->
+          <!-- Columna izquierda -->
           <div class="col-lg-6">
             <div class="menu-category">
               <h2 class="menu-section-title">Cafecitos</h2>
@@ -128,137 +164,151 @@
             </div>
           </div>
 
-          <!-- Derecha -->
+          <!-- Columna derecha -->
+
           <div class="col-lg-6">
             <div class="menu-category">
+              <div class="menu-divider menu-divider--small my-3">
+                <img
+                  src="./assets/img/menu/carta.png"
+                  alt="Ilustración carta"
+                  class="menu-divider__img"
+                />
+              </div>
+
               <h2 class="menu-section-title">No-cafeses</h2>
 
               <div class="menu-item">
                 <span class="menu-item-name">Choco caliente</span>
                 <span class="menu-price">$ 3500</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">Chai latte</span>
                 <span class="menu-price">$ 3500</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">El sucio chai</span>
                 <span class="menu-price">$ 4000</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">Bombón</span>
                 <span class="menu-price">$ 3500</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">Abejorro</span>
                 <span class="menu-price">$ 3500</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">Flat Earl</span>
                 <span class="menu-price">$ 2700</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">El Jacksito</span>
                 <span class="menu-price">$ 3300</span>
               </div>
+
               <div class="menu-item">
                 <span class="menu-item-name">Tetera 600 ml</span>
                 <span class="menu-price">$ 2500</span>
               </div>
             </div>
-
-            <div class="menu-illustration mt-4">
-              <img
-                src="./assets/img/illustrations/carta.png"
-                alt="Carta Treile"
-                class="treile-illustration-img"
-              />
-            </div>
           </div>
         </div>
+      </section>
 
-        <!-- RICOS + SANGUCHITOS -->
-        <section class="mt-5">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="menu-category">
-                <h2 class="menu-section-title">Ricos</h2>
+      <!-- BLOQUE INFERIOR DEL MENÚ -->
+      <section class="mt-5" aria-label="Menú de comida">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="menu-category">
+              <h2 class="menu-section-title">Ricos</h2>
 
-                <div class="menu-item">
-                  <span class="menu-item-name">Torta en vaso</span>
-                  <span class="menu-price">$ 2300</span>
-                </div>
-
-                <div class="menu-item">
-                  <span class="menu-item-name">Kuchen individual</span>
-                  <span class="menu-price">$ 2500</span>
-                </div>
-
-                <div class="menu-item">
-                  <span class="menu-item-name">Facturita</span>
-                  <span class="menu-price">$ 2700</span>
-                </div>
-
-                <div class="menu-item">
-                  <span class="menu-item-name">Galleta Treileyork</span>
-                  <span class="menu-price">$ 2700</span>
-                </div>
-
-                <div class="menu-item">
-                  <span class="menu-item-name">Alfajor maicena</span>
-                  <span class="menu-price">$ 3000</span>
-                </div>
+              <div class="menu-item">
+                <span class="menu-item-name">Torta en vaso</span>
+                <span class="menu-price">$ 2300</span>
               </div>
-            </div>
 
-            <div class="col-lg-6">
-              <div class="menu-category">
-                <h2 class="menu-section-title">Sanguchitos</h2>
+              <div class="menu-item">
+                <span class="menu-item-name">Kuchen individual</span>
+                <span class="menu-price">$ 2500</span>
+              </div>
 
-                <div class="menu-item">
-                  <div>
-                    <span class="menu-item-name">Huevito</span>
-                    <div class="menu-item-desc">
-                      Pasta de huevo, mayo casera, ciboulette
-                    </div>
-                  </div>
-                  <span class="menu-price">$ 3000</span>
-                </div>
+              <div class="menu-item">
+                <span class="menu-item-name">Facturita</span>
+                <span class="menu-price">$ 2700</span>
+              </div>
 
-                <div class="menu-item">
-                  <div>
-                    <span class="menu-item-name">Salame</span>
-                    <div class="menu-item-desc">Salame, queso, champiñones</div>
-                  </div>
-                  <span class="menu-price">$ 3300</span>
-                </div>
+              <div class="menu-item">
+                <span class="menu-item-name">Galleta Treileyork</span>
+                <span class="menu-price">$ 2700</span>
+              </div>
 
-                <div class="menu-item">
-                  <div>
-                    <span class="menu-item-name">Capresse</span>
-                    <div class="menu-item-desc">Queso, tomate, pesto</div>
-                  </div>
-                  <span class="menu-price">$ 3300</span>
-                </div>
-
-                <div class="menu-item">
-                  <div>
-                    <span class="menu-item-name">Hummus Sapiens</span>
-                    <div class="menu-item-desc">
-                      Hummus, pepinillo, tomate, cebolla morada
-                    </div>
-                  </div>
-                  <span class="menu-price">$ 3600</span>
-                </div>
+              <div class="menu-item">
+                <span class="menu-item-name">Alfajor maicena</span>
+                <span class="menu-price">$ 3000</span>
               </div>
             </div>
           </div>
-        </section>
+
+          <div class="col-lg-6">
+            <div class="menu-category">
+              <h2 class="menu-section-title">Sanguchitos</h2>
+
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Huevito</span>
+                  <div class="menu-item-desc">
+                    Pasta de huevo, mayo casera, ciboulette
+                  </div>
+                </div>
+                <span class="menu-price">$ 3000</span>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Salame</span>
+                  <div class="menu-item-desc">Salame, queso, champiñones</div>
+                </div>
+                <span class="menu-price">$ 3300</span>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Capresse</span>
+                  <div class="menu-item-desc">Queso, tomate, pesto</div>
+                </div>
+                <span class="menu-price">$ 3300</span>
+              </div>
+
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Hummus Sapiens</span>
+                  <div class="menu-item-desc">
+                    Hummus, pepinillo, tomate, cebolla morada
+                  </div>
+                </div>
+                <span class="menu-price">$ 3600</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-divider menu-divider--small my-3">
+            <img
+              src="./assets/img/menu/cafeteria.png"
+              alt="Ilustración carta"
+              class="menu-divider__img"
+            />
+          </div>
+        </div>
       </section>
     </main>
 
     <div data-include="footer"></div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/includes.js"></script>

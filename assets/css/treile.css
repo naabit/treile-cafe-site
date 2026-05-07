@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --treile-rojo: #881713;
   --treile-amarillo: #f6d264;
   --treile-fondo: var(--treile-rojo);
@@ -79,6 +79,28 @@ h2,
   color: var(--treile-amarillo);
 }
 
+/* NAV EN INDEX: aparece al terminar el hero */
+body.nav-after-hero [data-nav-after-hero] {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  transform: translateY(-110%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 180ms ease, opacity 180ms ease, visibility 0s linear 180ms;
+}
+
+body.nav-after-hero [data-nav-after-hero].is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
 /* BOTONES */
 .btn-treile {
   background-color: var(--treile-amarillo);
@@ -132,6 +154,21 @@ h2,
 
 .menu-hero h1 {
   color: var(--treile-amarillo);
+}
+
+.menu-hero__art {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.menu-hero__img {
+  width: min(240px, 70vw);
+  height: auto;
+  max-height: 220px;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.28));
 }
 
 /* TÍTULOS DE SECCIÓN MANUSCRITOS */
@@ -206,6 +243,46 @@ h2,
   background-color: #fffdf6;
 }
 
+.treile-illustration-img {
+  width: min(380px, 100%);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Separadores ilustrados del menú */
+.menu-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.menu-divider__img {
+  width: 50%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.32));
+}
+
+/* Imagen dentro de columna: más pequeña */
+.menu-divider--small .menu-divider__img {
+  max-width: 380px;
+}
+
+/* Imagen central entre bloques: más protagonista */
+.menu-divider--wide .menu-divider__img {
+  max-width: 620px;
+}
+
+/* Imagen inferior */
+.menu-divider--bottom .menu-divider__img {
+  max-width: 560px;
+}
+
 /* Si luego agregas imágenes reales, úsalo así:
    <div class="menu-illustration">
      <img src="img/guitarra-treile.svg" alt="Ilustración Treile" class="img-fluid mb-2">
@@ -213,7 +290,10 @@ h2,
    </div>
 */
 
-/* FOOTER */
+/* =========================
+   FOOTER TREILE
+========================= */
+
 footer.treile-footer-bg {
   margin-top: 4rem;
   width: 100%;
@@ -224,7 +304,7 @@ footer.treile-footer-bg {
   border-top: 4px solid var(--treile-rojo);
   position: relative;
   overflow: hidden;
-  color: rgba(35, 12, 12, 0.88);
+  color: rgba(255, 255, 255, 0.9);
   font-family: var(--treile-font-body);
 }
 
@@ -235,145 +315,95 @@ footer.treile-footer-bg::before {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(255, 250, 243, 0.72) 0%,
-    rgba(255, 250, 243, 0.38) 40%,
-    rgba(255, 250, 243, 0.12) 100%
+    rgba(136, 23, 19, 0.92) 0%,
+    rgba(136, 23, 19, 0.72) 45%,
+    rgba(136, 23, 19, 0.38) 100%
   );
   pointer-events: none;
 }
 
 .treile-footer {
+  padding-top: 2.5rem;
+  padding-bottom: 2.1rem;
   position: relative;
   z-index: 2;
-  padding-top: 4rem;
-  padding-bottom: 7rem;
 }
 
-/* GRID 3 COLUMNAS */
+/* GRID */
 .treile-footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr 1fr;
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-/* TARJETAS */
-.treile-footer-card {
-  padding: 1.15rem 1.15rem 1.05rem;
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 1rem;
-  border: 1px solid rgba(136, 23, 19, 0.08);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(8px);
+/* COLUMNAS */
+.treile-footer__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* MARCA */
+/* LOGO */
+.treile-footer__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .treile-footer__brandmark {
-  height: 76px;
-  width: auto;
-  display: block;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.12));
-}
-
-.treile-footer__tagline {
-  max-width: 28ch;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(35, 12, 12, 0.82);
-  margin-bottom: 1.2rem;
+  width: 128px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
 }
 
 /* TITULOS */
 .treile-footer__title {
   font-family: var(--treile-font-display);
-  color: var(--treile-rojo);
-  font-size: 0.95rem;
-  letter-spacing: 0.16em;
+  font-size: 0.86rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  color: var(--treile-amarillo);
+  margin: 0 0 1rem;
+}
+
+/* TEXTOS */
+.treile-footer__text {
+  margin: 0 0 0.25rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+}
+
+.treile-footer__fine {
+  margin-top: 0.45rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 /* LINKS */
 .treile-footer__link {
-  display: block;
-  width: fit-content;
-  margin-bottom: 0.55rem;
-  color: rgba(35, 12, 12, 0.82);
+  display: inline-block;
+  margin-bottom: 0.6rem;
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.9rem;
-  line-height: 1.35;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: 120ms ease;
+  transition: color 120ms ease, transform 120ms ease;
 }
 
 .treile-footer__link:hover {
-  color: var(--treile-rojo);
+  color: var(--treile-amarillo);
   transform: translateX(2px);
-}
-
-/* CTA */
-.treile-footer__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.78rem 1.1rem;
-  border-radius: 999px;
-  background: var(--treile-rojo);
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: 140ms ease;
-}
-
-.treile-footer__cta:hover {
-  background: #6f110e;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* FRANJA INFERIOR */
-.treile-footer-community {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  padding: 1rem 0;
-  background: rgba(136, 23, 19, 0.9);
-}
-
-.treile-footer-community__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.treile-footer-community__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.treile-footer-community__text,
-.treile-footer-community__fine {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.74rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* REDES */
 .treile-social {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .treile-social__link {
@@ -384,7 +414,7 @@ footer.treile-footer-bg::before {
   justify-content: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  transition: 140ms ease;
+  transition: transform 140ms ease, background-color 140ms ease;
 }
 
 .treile-social__link:hover {
@@ -392,42 +422,45 @@ footer.treile-footer-bg::before {
   background: rgba(255, 255, 255, 0.16);
 }
 
-.treile-social__link:focus-visible,
-.treile-footer__link:focus-visible,
-.treile-footer__cta:focus-visible {
-  outline: 3px solid rgba(246, 210, 100, 0.7);
-  outline-offset: 3px;
-}
-
 .treile-social__icon {
   width: 20px;
   height: 20px;
 }
 
-/* RESPONSIVE */
+/* COPYRIGHT */
+.treile-footer__bottom {
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* FOCUS */
+.treile-social__link:focus-visible,
+.treile-footer__link:focus-visible {
+  outline: 3px solid rgba(246, 210, 100, 0.7);
+  outline-offset: 3px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .treile-footer__grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
+    text-align: center;
   }
 
-  .treile-footer {
-    padding-top: 3rem;
-    padding-bottom: 8rem;
+  .treile-social {
+    justify-content: center;
   }
 
-  .treile-footer-community__inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .treile-footer-community__meta {
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .treile-footer__brandmark {
-    height: 68px;
+  .treile-footer__link {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
