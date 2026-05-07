@@ -10,65 +10,30 @@
       rel="stylesheet"
     />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Oswald:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Estilos Treile -->
-    <link rel="stylesheet" href="treile.css" />
+    <link rel="stylesheet" href="./assets/css/treile.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/brand/patita-roja-32x32.png"
+    />
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-treile sticky-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">TREILE</a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Alternar navegación"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">Menú</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="blog.html">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div data-include="navbar"></div>
 
     <!-- CONTENIDO -->
     <main class="container my-5" id="postContainer">
       <!-- Aquí se inyecta el post vía JS -->
     </main>
-
-    <footer>
-      <div class="container text-center">
-        <small>Treile Café · Pucón · Proyecto demo para portafolio Naabit</small>
-      </div>
-    </footer>
+    <div data-include="footer"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/includes.js"></script>
 
     <!-- Datos del blog -->
     <script src="./assets/js/blog.js"></script>
