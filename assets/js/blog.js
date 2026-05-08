@@ -22,6 +22,13 @@ function renderPosts(lista) {
       (post) => `
       <article class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0">
+          <img
+            src="https://picsum.photos/seed/treile-post-${post.id}/800/500"
+            class="card-img-top"
+            alt="${post.titulo}"
+            loading="lazy"
+            style="height: 180px; object-fit: cover;"
+          />
           <div class="card-body d-flex flex-column">
             <span class="badge bg-warning text-dark mb-2 text-uppercase" style="letter-spacing:0.08em;">
               ${post.categoria}

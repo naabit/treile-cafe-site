@@ -54,6 +54,13 @@ h2,
   background-color: var(--treile-rojo);
   --treile-nav-logo-h: 42px;
   padding: 0.6rem 0;
+  z-index: 1030;
+}
+
+/* Asegura que el navbar quede pegado arriba aunque Bootstrap no cargue por algún motivo */
+.navbar-treile.sticky-top {
+  position: sticky;
+  top: 0;
 }
 
 .navbar-treile .navbar-brand {
@@ -467,11 +474,19 @@ footer.treile-footer-bg::before {
 /* CAROUSEL HOME */
 .home-hero {
   position: relative;
+  height: 100svh;
+  min-height: 100vh;
 }
 
 .home-hero__carousel {
   position: relative;
   z-index: 1;
+  height: 100%;
+}
+
+.home-hero__carousel .carousel-inner,
+.home-hero__carousel .carousel-item {
+  height: 100%;
 }
 
 .home-hero__overlay {
@@ -492,20 +507,20 @@ footer.treile-footer-bg::before {
 }
 
 .home-hero__img {
-  height: clamp(360px, 62vh, 720px);
+  height: 100%;
   object-fit: cover;
 }
 
 #treileCarousel .carousel-inner {
   border: 2px solid var(--treile-rojo);
-  border-radius: 0.75rem;
+  border-radius: 0;
   overflow: hidden;
 }
 
 #treileCarousel .carousel-caption {
   background-color: rgba(136, 23, 19, 0.85);
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
 
 #treileCarousel .carousel-caption h5 {

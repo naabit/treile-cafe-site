@@ -16,7 +16,7 @@ function renderPost() {
     container.innerHTML = `
       <div class="text-center mt-5">
         <p class="text-muted">No se especificó ningún post.</p>
-        <a href="blog.html" class="btn btn-outline-dark btn-sm mt-3">Volver al blog</a>
+        <a href="blog.html" class="btn btn-treile btn-sm mt-3">Volver al blog</a>
       </div>
     `;
     return;
@@ -28,7 +28,7 @@ function renderPost() {
     container.innerHTML = `
       <div class="text-center mt-5">
         <p class="text-muted">No encontramos este post. Puede que haya sido movido o borrado.</p>
-        <a href="blog.html" class="btn btn-outline-dark btn-sm mt-3">Volver al blog</a>
+        <a href="blog.html" class="btn btn-treile btn-sm mt-3">Volver al blog</a>
       </div>
     `;
     return;
@@ -41,11 +41,11 @@ function renderPost() {
           <span class="badge bg-warning text-dark mb-2 text-uppercase" style="letter-spacing:0.08em;">
             ${post.categoria}
           </span>
-          <h1 class="h2 mb-1" style="color: var(--treile-rojo);">
+          <h1 class="h2 mb-1" style="color: var(--treile-amarillo);">
             ${post.titulo}
           </h1>
-          <p class="text-muted small mb-0">${post.fecha}</p>
-          <p class="small text-muted">
+          <p class="small mb-0" style="color: var(--treile-texto);">${post.fecha}</p>
+          <p class="small mb-0" style="color: var(--treile-texto);">
             ${post.etiquetas.map((tag) => `#${tag}`).join(" · ")}
           </p>
           <hr />
@@ -62,7 +62,7 @@ function renderPost() {
         </section>
 
         <div class="d-flex justify-content-between align-items-center">
-          <a href="blog.html" class="btn btn-outline-dark btn-sm">
+          <a href="blog.html" class="btn btn-treile btn-sm">
             ← Volver al blog
           </a>
         </div>
