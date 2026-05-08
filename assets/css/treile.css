@@ -511,6 +511,19 @@ footer.treile-footer-bg::before {
   object-fit: cover;
 }
 
+.home-cta-float {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 1040;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.nav-after-hero {
+  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+}
+
 #treileCarousel .carousel-inner {
   border: 2px solid var(--treile-rojo);
   border-radius: 0;
