@@ -1,0 +1,14 @@
+.react-hero { overflow: hidden; }
+.react-hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.22); z-index: 1; pointer-events: none; }
+.react-lead { font-size: 1rem; line-height: 1.8; }
+.blog-logo { width: min(220px, 60vw); height: auto; }
+.blog-card { border: 1px solid rgba(246,210,100,.4); border-radius: 1rem; padding: 1.25rem; background: rgba(255,255,255,.04); }
+.blog-card h2 { font-size: 1.2rem; margin: .65rem 0; color: var(--treile-amarillo); }
+.blog-card a, .post-wrap a { color: var(--treile-amarillo); }
+.post-wrap { max-width: 820px; }
+.post-wrap h1 { color: var(--treile-amarillo); margin: .6rem 0 1.5rem; }
+.post-content { line-height: 1.8; }
+.post-content img { max-width: 100%; height: auto; }
+.treile-react-footer { margin-top: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(246,210,100,.35); background: #74120f; }
+.treile-react-footer p { margin-bottom: .25rem; color: var(--treile-amarillo); font-family: var(--treile-font-display); letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 576px) { .navbar-treile .nav-link { padding-inline: .55rem; font-size: .72rem; } }
